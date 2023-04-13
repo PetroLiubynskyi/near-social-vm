@@ -110,9 +110,9 @@ export const Widget = React.forwardRef((props, forwardedRef) => {
   }, [propsSrc, propsCode, configs, srcOrCode]);
 
   useEffect(() => {
-    if (!near) {
-      return;
-    }
+    // if (!near) {
+    //   return;
+    // }
     if (srcOrCode?.src) {
       const src = srcOrCode.src;
       const [srcPath, version] = src.split("@");
@@ -192,7 +192,7 @@ export const Widget = React.forwardRef((props, forwardedRef) => {
   );
 
   useEffect(() => {
-    if (!near || !parsedCode) {
+    if (/*!near || */!parsedCode) {
       return;
     }
     setState(undefined);
